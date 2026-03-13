@@ -1,0 +1,46 @@
+{
+  "name": "aplicacio-web-anotacions",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "web-vitals": "^5.1.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "lint": "eslint src/**/*.js"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "jsdom": "^29.0.0",
+    "markdownlint": "^0.40.0",
+    "prettier": "^3.8.1",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0"
+  }
+}

@@ -1,0 +1,228 @@
+:root {
+  --uoc-cyan: #73edff;
+  --uoc-blue: #000078;
+  --uoc-cyan-soft: #d6faff;
+  --uoc-blue-soft: #d8d8ea;
+  --uoc-blue-mid: #9999c9;
+  --uoc-sand: #ddd5c2;
+  --uoc-cream: #ecdab2;
+  --uoc-gray-100: #f0f0f0;
+  --uoc-gray-300: #d0d0d0;
+  --uoc-gray-700: #878787;
+
+  --bs-primary: var(--uoc-blue);
+  --bs-secondary: var(--uoc-blue-mid);
+  --bs-body-color: #121233;
+  --bs-body-bg: #ffffff;
+  --bs-border-color: var(--uoc-gray-300);
+  --bs-link-color: var(--uoc-blue);
+  --bs-link-hover-color: #1414aa;
+}
+
+body {
+  font-family: "Avenir Next", "Avenir", "Segoe UI", sans-serif;
+  background-color: var(--uoc-gray-100);
+}
+
+.app-shell {
+  min-height: 100vh;
+  background-color: var(--uoc-gray-100);
+}
+
+.page-header {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.page-header p {
+  color: var(--uoc-gray-700);
+  max-width: 76ch;
+}
+
+.panel {
+  max-width: 1120px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+.btn {
+  font-weight: 600;
+}
+
+.btn-uoc-primary {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--uoc-blue);
+  --bs-btn-border-color: var(--uoc-blue);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #1f1f99;
+  --bs-btn-hover-border-color: #1f1f99;
+  --bs-btn-focus-shadow-rgb: 0, 0, 120;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #2424b8;
+  --bs-btn-active-border-color: #2424b8;
+}
+
+.btn-outline-uoc {
+  --bs-btn-color: var(--uoc-blue);
+  --bs-btn-border-color: var(--uoc-blue-mid);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--uoc-blue-mid);
+  --bs-btn-hover-border-color: var(--uoc-blue-mid);
+  --bs-btn-focus-shadow-rgb: 153, 153, 201;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--uoc-blue);
+  --bs-btn-active-border-color: var(--uoc-blue);
+}
+
+.btn-uoc-danger {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--uoc-gray-700);
+  --bs-btn-border-color: var(--uoc-gray-700);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #6f6f6f;
+  --bs-btn-hover-border-color: #6f6f6f;
+  --bs-btn-focus-shadow-rgb: 135, 135, 135;
+}
+
+.note-list-item,
+.block-item {
+  border: 1px solid var(--uoc-blue-soft);
+  background: #ffffff;
+}
+
+.note-list-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.note-link {
+  color: var(--uoc-blue);
+}
+
+.note-link span {
+  color: var(--uoc-gray-700);
+  font-size: 0.875rem;
+}
+
+.empty-state,
+.hint-text {
+  border-color: var(--uoc-blue-mid) !important;
+  background-color: var(--uoc-cyan-soft);
+  color: #11113a;
+}
+
+.block-content {
+  width: 100%;
+  color: inherit;
+}
+
+.block-heading-level-1,
+.block-heading-level-2,
+.block-heading-level-3 {
+  margin: 0;
+  color: var(--uoc-blue);
+}
+
+.block-heading-level-1 {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+}
+
+.block-heading-level-2 {
+  font-size: clamp(1.25rem, 1rem + 0.9vw, 1.55rem);
+}
+
+.block-heading-level-3 {
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.2rem);
+}
+
+.block-paragraph {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.block-paragraph-highlight {
+  background: var(--uoc-cream);
+  border-left: 4px solid var(--uoc-blue);
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.block-image,
+.image-preview {
+  border-radius: 0.6rem;
+}
+
+.image-preview {
+  max-width: 100%;
+  border: 1px solid var(--uoc-gray-300);
+}
+
+.sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  background: rgba(0, 0, 120, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.sheet {
+  width: min(760px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  border-radius: 1rem;
+}
+
+.error-message {
+  border: 1px solid #b9b9d9;
+  background: #f8f8ff;
+  color: var(--uoc-blue);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.narrow-panel {
+  max-width: 700px;
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .app-shell {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .note-list-item {
+    grid-template-columns: 1fr;
+  }
+
+  .sheet {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .panel {
+    max-width: 920px;
+  }
+
+  .card-body {
+    padding: 1.25rem !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .panel {
+    max-width: 1120px;
+  }
+
+  .card-body {
+    padding: 1.5rem !important;
+  }
+}
