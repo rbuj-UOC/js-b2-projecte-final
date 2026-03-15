@@ -1,5 +1,6 @@
 import { Block } from "./Block";
 import { BLOCK_TYPES } from "./blockTypes";
+import escapeHtml from "../utils/escapeHtml";
 
 const HEX_6_REGEX = /^[0-9a-fA-F]{6}$/;
 
@@ -58,14 +59,7 @@ class BlockHeading extends Block {
   }
 
   render() {
-    const tag = `h${this.level}`;
-
-    return {
-      type: tag,
-      text: this.content,
-      style: { color: `#${this.color}` },
-      className: `block-heading block-heading-level-${this.level}`
-    };
+    return `<h${this.level} class="block-heading block-heading-level-${this.level}" style="color:#${escapeHtml(this.color)}">${escapeHtml(this.content)}</h${this.level}>`;
   }
 }
 

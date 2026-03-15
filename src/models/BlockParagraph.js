@@ -1,5 +1,6 @@
 import { Block } from "./Block";
 import { BLOCK_TYPES } from "./blockTypes";
+import escapeHtml from "../utils/escapeHtml";
 
 class BlockParagraph extends Block {
   constructor({ content = "", highlight = false } = {}) {
@@ -32,12 +33,10 @@ class BlockParagraph extends Block {
   }
 
   render() {
-    return {
-      type: "p",
-      text: this.content,
-      className:
-        `block-paragraph ${this.highlight ? "block-paragraph-highlight" : ""}`.trim()
-    };
+    const paragraphClass = this.highlight
+      ? "block-paragraph block-paragraph-highlight"
+      : "block-paragraph";
+    return `<p class="${paragraphClass}">${escapeHtml(this.content)}</p>`;
   }
 }
 

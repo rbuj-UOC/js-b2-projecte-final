@@ -92,10 +92,9 @@ body {
 }
 
 .note-list-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .note-link {
@@ -194,10 +193,6 @@ body {
   .app-shell {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-  }
-
-  .note-list-item {
-    grid-template-columns: 1fr;
   }
 
   .sheet {

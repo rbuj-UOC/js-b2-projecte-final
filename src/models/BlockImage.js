@@ -1,5 +1,6 @@
 import { Block } from "./Block";
 import { BLOCK_TYPES } from "./blockTypes";
+import escapeHtml from "../utils/escapeHtml";
 
 const IMAGE_BASE64_REGEX = /^data:image\/(png|jpeg|gif);base64,/i;
 
@@ -116,25 +117,10 @@ class BlockImage extends Block {
   }
 
   render() {
-    const style = {
-      width: this.upscale ? "100%" : "auto",
-      height: "auto",
-      display: "block"
-    };
-
-    if (this.maxWidth === "auto") {
-      style.maxWidth = "none";
-    } else {
-      style.maxWidth = `${this.maxWidth}${this.units}`;
-    }
-
-    return {
-      type: "img",
-      src: this.content,
-      alt: "Note visual content",
-      style,
-      className: "block-image"
-    };
+    const maxWidth =
+      this.maxWidth === "auto" ? "none" : `${this.maxWidth}${this.units}`;
+    const width = this.upscale ? "100%" : "auto";
+    return `<img src="${escapeHtml(this.content)}" alt="Vista previa" class="block-image" style="display:block;height:auto;width:${width};max-width:${maxWidth};" />`;
   }
 }
 
